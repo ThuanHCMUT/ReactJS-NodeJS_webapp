@@ -9,6 +9,7 @@ import Banner from './components/Banner/Banner';
 import MainFooter from './components/MainFooter/MainFooter';
 import TrendingList from './components/Trending/TrendingList';
 import axios from 'axios';
+import SingleItemSlider from './components/SingleItemSlider/SingleItemSlider';
 
 const BestSell = [
   {
@@ -87,6 +88,52 @@ const BestSell = [
   },
 ]
 
+const ads = [
+  {
+    id: 1,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/bannerimages/71_inr.jpg"
+  },
+  {
+    id: 2,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/bannerimages/70_inr.jpg"
+  },
+  {
+    id: 3,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/bannerimages/72_inr.jpg"
+  },
+  {
+    id: 4,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/bannerimages/73_inr.jpg"
+  },
+  {
+    id: 5,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/bannerimages/77_inr.jpg"
+  },
+  {
+    id: 6,
+    image: 'https://d2g9wbak88g7ch.cloudfront.net/bannerimages/76_inr.jpg'
+  }
+]
+
+const ads_banner = [
+  {
+    id: 1,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/promotionimages/5_preorders.jpg"
+  },
+  {
+    id: 2,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/promotionimages/4_mangamania.jpg"
+  },
+  {
+    id: 3,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/promotionimages/5_preorders.jpg"
+  },
+  {
+    id: 4,
+    image: "https://d2g9wbak88g7ch.cloudfront.net/promotionimages/4_mangamania.jpg"
+  }
+]
+
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -142,14 +189,20 @@ function App() {
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <MainHeader onShowCart={showCartHandler}/>
-      <div style = {{marginTop: '100px'}}>
+      <div style = {{marginTop: '105px'}}>
         <Banner/>
       </div>
-      <AdsSlider/>
+      <div style={{marginTop: '0px'}}>
+        <SingleItemSlider items={ads}/>
+      </div>
+      
+      
       <TrendingList items={trendingBooks} />
       <BookList items={BestSell} text="Best Seller" />
       <BookList items={graphicNovels} text="Graphic Novels" />
-
+      <div style={{marginTop: '5px', marginBottom: '20px'}}>
+        <AdsSlider items={ads_banner}/>
+      </div>
       <MainFooter/>
     </CartProvider>
 
