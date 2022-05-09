@@ -7,6 +7,7 @@ import classes from './AdsSlider.module.css';
 import '../UI/Arrow.css';
 import Container from "../UI/Container";
 import Ads from "./Ads/Ads";
+import Adss from "./Adss/Adss";
 
 const PrevArrow = ({ currentSlide, slideCount, ...props }) => {
     const { onClick } = props;
@@ -27,6 +28,8 @@ const PrevArrow = ({ currentSlide, slideCount, ...props }) => {
     );
   };
 
+  let flag = true;
+
 export default class AdsSlider extends Component {
   constructor(props) {
     super(props);
@@ -40,9 +43,26 @@ export default class AdsSlider extends Component {
     this.slider.slickPrev();
   }
   render() {
+    // console.log(this.props);
+
     const adsss = this.props.items.map(item => (
         <Ads key={item.id} image={item.image}/>
     ))
+
+    const adsss2 = this.props.items.map(item => (
+        <Adss key={item.id} title={item.title} image={item.image}/>
+    ))
+
+    console.log(Object.keys(adsss).length);
+    console.log("HIIIII");
+    console.log(Object.keys(adsss2).length);
+
+    if(Object.keys(adsss2).length === 14 && Object.keys(adsss).length === 14){
+        flag = true;
+    }
+    else{
+        flag = false;
+    }
 
     const settings = {
       dots: false,
@@ -54,16 +74,44 @@ export default class AdsSlider extends Component {
     //   nextArrow: <NextArrow />,
     //   prevArrow: <PrevArrow />
     };
-    return (
-        <React.Fragment>
-        <div className={classes.list} style={{ textAlign: "center", marginTop: "0px", border: '1px solid lightgray' }}>
-          <h2 style={{textAlign: 'center', marginLeft: '20px'}}>Our Best Fiction Books</h2>
-          <Slider {...settings} style={{marginBottom: '20px'}}>
-            {adsss}
-          </Slider>
-          </div> 
-      </React.Fragment>
-    );
+
+    const settings2 = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        autoplay: true,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />
+      };
+    if(flag === true){
+        return(
+            <React.Fragment>
+                <div className={classes.list} style={{textAlign: "center", marginLeft: "auto", marginRight: 'auto',border: '2px solid lightgrey', width: '100%', paddingRight: '20px', paddingLeft: '20px'}}>
+                    <Slider {...settings2} style={{marginBottom: '0px', marginTop: '15px'}}>
+                        {adsss2}
+                    </Slider>
+                </div> 
+            </React.Fragment>
+        );
+    }
+    else{
+        return (
+            <React.Fragment>
+            <div className={classes.list} style={{ textAlign: "center", marginTop: "0px", border: '1px solid lightgray' }}>
+              <h2 style={{textAlign: 'center', marginLeft: '20px'}}>Our Best Fiction Books</h2>
+              <Slider {...settings} style={{marginBottom: '20px'}}>
+                {adsss}
+              </Slider>
+              {/* <Slider {...settings2} style={{marginBottom: '20px'}}>
+                {adsss2}
+              </Slider> */}
+              </div> 
+          </React.Fragment>
+        );
+    };
+    
   }
 }
 

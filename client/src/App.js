@@ -134,6 +134,78 @@ const ads_banner = [
   }
 ]
 
+const icon_item = [
+  {
+    id: 1,
+    title: 'International Best Seller',
+    image: "https://www.bookswagon.com/images/icon7.png"
+  },
+  {
+    id: 2,
+    title: 'New Arrivals',
+    image: "https://www.bookswagon.com/images/icon2.png"
+  },
+  {
+    id: 3,
+    title: 'Fiction Books',
+    image: "https://www.bookswagon.com/images/icon5.png"
+  },
+  {
+    id: 4,
+    title: 'Tarrot Cards',
+    image: "https://www.bookswagon.com/images/icon9.png"
+  },
+  {
+    id: 5,
+    title: 'Best Seller',
+    image: "https://www.bookswagon.com/images/icon1.png"
+  },
+  {
+    id: 6,
+    title: 'Award Winners',
+    image: "https://www.bookswagon.com/images/icon8.png"
+  },
+  {
+    id: 7,
+    title: 'Box Sets',
+    image: "https://www.bookswagon.com/images/icon4.png"
+  },
+  {
+    id: 8,
+    title: 'International Best Seller',
+    image: "https://www.bookswagon.com/images/icon7.png"
+  },{
+    id: 9,
+    title: 'New Arrivals',
+    image: "https://www.bookswagon.com/images/icon2.png"
+  },
+  {
+    id: 10,
+    title: 'Fiction Books',
+    image: "https://www.bookswagon.com/images/icon5.png"
+  },
+  {
+    id: 11,
+    title: 'Tarrot Cards',
+    image: "https://www.bookswagon.com/images/icon9.png"
+  },
+  {
+    id: 12,
+    title: 'Best Seller',
+    image: "https://www.bookswagon.com/images/icon1.png"
+  },
+  {
+    id: 13,
+    title: 'Award Winners',
+    image: "https://www.bookswagon.com/images/icon8.png"
+  },
+  {
+    id: 14,
+    title: 'Box Sets',
+    image: "https://www.bookswagon.com/images/icon4.png"
+  }
+]
+
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -192,10 +264,12 @@ function App() {
       <div style = {{marginTop: '105px'}}>
         <Banner/>
       </div>
-      <div style={{marginTop: '0px'}}>
+      <div style={{marginTop: '0px', marginBottom: '50px'}}>
         <SingleItemSlider items={ads}/>
       </div>
-      
+      <div style={{marginBottom: '50px'}}>
+        <AdsSlider items={icon_item}/>
+      </div>
       
       <TrendingList items={trendingBooks} />
       <BookList items={BestSell} text="Best Seller" />
