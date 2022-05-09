@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import classes from './AdsSlider.module.css';
 // import BookList from "../BookList/BookList";
 import '../UI/Arrow.css';
-import Container from "../UI/Container";
+// import Container from "../UI/Container";
 import Ads from "./Ads/Ads";
 import Adss from "./Adss/Adss";
 
@@ -109,6 +109,41 @@ export default class AdsSlider extends Component {
               </Slider> */}
               </div> 
           </React.Fragment>
+                /* <React.Fragment>
+                <Container>
+                <div>
+                <h2>Previous and Next methods</h2>
+                <Slider ref={c => (this.slider = c)} {...settings}>
+                <div key={1}>
+                    <h3 style={{border: "2px solid black"}}>1</h3>
+                </div>
+                <div key={2}>
+                    <h3 style={{border: "2px solid black"}}>2</h3>
+                </div>
+                <div key={3}>
+                    <h3 style={{border: "2px solid black"}}>3</h3>
+                </div>
+                <div key={4}>
+                    <h3 style={{border: "2px solid black"}}>4</h3>
+                </div>
+                <div key={5}>
+                    <h3 style={{border: "2px solid black"}}>5</h3>
+                </div>
+                <div key={6}>
+                    <h3 style={{border: "2px solid black"}}>6</h3>
+                </div>
+                </Slider>
+                <div style={{ textAlign: "center", marginTop: "100px" }}>
+                <button className="button" onClick={this.previous}>
+                    Previous
+                </button>
+                <button className="button" onClick={this.next}>
+                    Next
+                </button>
+                </div>
+            </div>
+                </Container>
+            </React.Fragment> */
         );
     };
     
@@ -116,38 +151,3 @@ export default class AdsSlider extends Component {
 }
 
 
-{/* <React.Fragment>
-          <Container>
-          <div>
-        <h2>Previous and Next methods</h2>
-        <Slider ref={c => (this.slider = c)} {...settings}>
-          <div key={1}>
-            <h3 style={{border: "2px solid black"}}>1</h3>
-          </div>
-          <div key={2}>
-            <h3 style={{border: "2px solid black"}}>2</h3>
-          </div>
-          <div key={3}>
-            <h3 style={{border: "2px solid black"}}>3</h3>
-          </div>
-          <div key={4}>
-            <h3 style={{border: "2px solid black"}}>4</h3>
-          </div>
-          <div key={5}>
-            <h3 style={{border: "2px solid black"}}>5</h3>
-          </div>
-          <div key={6}>
-            <h3 style={{border: "2px solid black"}}>6</h3>
-          </div>
-        </Slider>
-        <div style={{ textAlign: "center", marginTop: "100px" }}>
-          <button className="button" onClick={this.previous}>
-            Previous
-          </button>
-          <button className="button" onClick={this.next}>
-            Next
-          </button>
-        </div>
-      </div>
-          </Container>
-      </React.Fragment> */}
