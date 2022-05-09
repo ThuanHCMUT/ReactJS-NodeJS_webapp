@@ -206,7 +206,6 @@ const icon_item = [
   }
 ]
 
-
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [graphicNovels, setGraphicNovels] = useState([]);
@@ -262,7 +261,7 @@ function App() {
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <MainHeader onShowCart={showCartHandler}/>
       <div style = {{marginTop: '105px'}}>
-        <Banner/>
+        <Banner image={"https://d2g9wbak88g7ch.cloudfront.net/promotionimages/1_alltimefavourite.jpg"}/>
       </div>
       <div style={{marginTop: '0px', marginBottom: '50px'}}>
         <SingleItemSlider items={ads}/>
@@ -276,6 +275,9 @@ function App() {
       <BookList items={graphicNovels} text="Graphic Novels" />
       <div style={{marginTop: '5px', marginBottom: '20px'}}>
         <AdsSlider items={ads_banner}/>
+      </div>
+      <div style={{marginBottom: '30px'}}>
+        <Banner image={"https://d2g9wbak88g7ch.cloudfront.net/promotionimages/examcentral.png"}/>
       </div>
       <MainFooter/>
     </CartProvider>

@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './Banner.module.css';
 
-const Banner = () => {
+const Banner = (props) => {
     return(
-        <img className={classes.container} src="https://d2g9wbak88g7ch.cloudfront.net/promotionimages/1_alltimefavourite.jpg" alt="Manga Mania Best Seller"/>
+        <img className={classes.container} src={props.image} alt="Best Seller"/>
     )
 }
 
