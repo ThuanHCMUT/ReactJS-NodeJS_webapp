@@ -67,7 +67,7 @@ export default class AdsSlider extends Component {
     const settings = {
       dots: false,
       infinite: true,
-      speed: 500,
+      speed: 100,
       slidesToShow: 2,
       slidesToScroll: 1,
       autoplay: true,
@@ -78,7 +78,7 @@ export default class AdsSlider extends Component {
     const settings2 = {
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 200,
         slidesToShow: 7,
         slidesToScroll: 1,
         autoplay: true,
